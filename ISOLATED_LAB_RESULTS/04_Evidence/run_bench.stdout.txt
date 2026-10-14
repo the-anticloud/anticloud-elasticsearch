@@ -1,0 +1,24 @@
+anticloud-reference bench v1.0.0 — 16/16 benchmarks PASS
+
+[PASS] 01_loc_files  Code size and file count
+[PASS] 02_licence  Licence posture (A/B/C policy)
+[PASS] 03_dependency_scan  Dependency scan (hash-pinned lock)
+[PASS] 04_sbom_cyclonedx  SBOM (CycloneDX 1.5)
+[PASS] 05_git_health  Git health
+[PASS] 06_owasp_llm_top10  OWASP Top 10 for LLM Applications
+[PASS] 07_owasp_top10  OWASP Top 10 (2021)
+[PASS] 08_soc2_type2  SOC 2 Type II readiness
+[PASS] 09_nist_ai_rmf  NIST AI Risk Management Framework
+[PASS] 10_nist_sp_800_53  NIST SP 800-53 Rev. 5
+[PASS] 11_nist_csf  NIST Cybersecurity Framework 2.0
+[PASS] 12_fedramp  FedRAMP Rev. 5
+[PASS] 13_pci_dss  PCI DSS v4.0.1
+[PASS] 14_iso_27001  ISO/IEC 27001:2022
+[PASS] 15_mitre_attack  MITRE ATT&CK v16
+[PASS] 16_ml_trl  ML Technology Readiness Level 8
+
+AGGREGATE: PASS
+
+wrote E:\fenta\Downloads\The Anticloud\ANTICLOUD_REPOS\ONLINE_RETAIL\ELASTICSEARCH\anticloud\BENCH.json
+
+---STDERR---

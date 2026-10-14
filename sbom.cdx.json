@@ -1,0 +1,38 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:0e37acb8-07fd-5257-903c-92643d879e4a",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-06T06:31:18Z",
+    "component": {
+      "type": "application",
+      "name": "ELASTICSEARCH",
+      "version": "b0fee6c01bf6",
+      "bom-ref": "pkg:generic/anticloud/ELASTICSEARCH@b0fee6c01bf6",
+      "purl": "pkg:generic/anticloud/ELASTICSEARCH@b0fee6c01bf6",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "b0fee6c01bf60fab9283148401e52353847932e1"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/lmenezes/elasticsearch"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": []
+}
