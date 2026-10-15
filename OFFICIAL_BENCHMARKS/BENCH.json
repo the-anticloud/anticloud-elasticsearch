@@ -1,0 +1,713 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "ELASTICSEARCH",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\ONLINE_RETAIL\\ELASTICSEARCH\\UPSTREAM_CLONE",
+    "git": {
+      "head": "b0fee6c01bf60fab9283148401e52353847932e1",
+      "url": "https://github.com/lmenezes/elasticsearch",
+      "branch": "master",
+      "committed_at": "2013-10-04T14:08:37+02:00"
+    }
+  },
+  "metrics": {
+    "files_total": 3518,
+    "source_files_scanned": 2949,
+    "lines_of_code": 455215,
+    "languages": {
+      ".java": 2948,
+      ".asciidoc": 317,
+      ".json": 162,
+      "(none)": 18,
+      ".so": 10,
+      ".txt": 7,
+      ".yml": 6,
+      ".zip": 5,
+      ".html": 5,
+      ".jmx": 5,
+      ".xml": 4,
+      ".png": 4,
+      ".properties": 3,
+      ".exe": 3,
+      ".bat": 3
+    }
+  },
+  "licence": {
+    "spdx": "Apache-2.0",
+    "class": "A",
+    "source_file": "LICENSE.txt",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 3085,
+    "files_with_findings": 2902,
+    "severity": {
+      "high": 2,
+      "medium": 4,
+      "low": 3079
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/test/java/org/elasticsearch/benchmark/checksum/ChecksumBenchmark.java",
+            "line": 41,
+            "cwe": "CWE-327",
+            "snippet": "md5(warmSize);"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/index/mapper/core/DateFieldMapper.java",
+            "line": 465,
+            "cwe": "CWE-89",
+            "snippet": "throw new MapperParsingException(\"failed to parse date field [\" + value + \"], tried both date format [\" + dateTimeFormatter.format() + \"], and timestamp number with locale [\" + dat"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/common/joda/DateMathParser.java",
+            "line": 194,
+            "cwe": "CWE-89",
+            "snippet": "throw new ElasticSearchParseException(\"failed to parse date field [\" + value + \"], tried both date format [\" + dateTimeFormatter.format() + \"], and timestamp number\", e);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/cluster/routing/allocation/decider/Decision.java",
+            "line": 106,
+            "cwe": "CWE-89",
+            "snippet": "return type + \"(\" + String.format(Locale.ROOT, explanation, explanationParams) + \")\";"
+          },
+          {
+            "severity": "high",
+            "file": "src/main/java/org/elasticsearch/action/deletebyquery/DeleteByQueryResponse.java",
+            "line": 34,
+            "cwe": "CWE-89",
+            "snippet": "* The response of delete by query action. Holds the {@link IndexDeleteByQueryResponse}s from all the"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 180,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/versioning/SimpleVersioningTests.java",
+            "line": 106,
+            "cwe": "CWE-",
+            "snippet": "// TODO: This behavior breaks rest api returning http status 201, good news is that it this is only the case until deletes GC kicks in."
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/AbstractIntegrationTest.java",
+            "line": 215,
+            "cwe": "CWE-",
+            "snippet": "// TODO RANDOMIZE"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/TestCluster.java",
+            "line": 109,
+            "cwe": "CWE-",
+            "snippet": "*  TODO"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/stress/client/ClientFailover.java",
+            "line": 85,
+            "cwe": "CWE-",
+            "snippet": "// TODO add verification to the number of indexed docs"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/store/mock/MockDirectoryHelper.java",
+            "line": 93,
+            "cwe": "CWE-",
+            "snippet": "// TODO we should port this FilterDirectory to Lucene"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/hamcrest/ElasticSearchGeoAssertions.java",
+            "line": 132,
+            "cwe": "CWE-",
+            "snippet": "// TODO: This test do not check all permutations of linestrings. So the test"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/suggest/CompletionPostingsFormatTest.java",
+            "line": 271,
+            "cwe": "CWE-",
+            "snippet": "// TODO ADD more unittests"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/sort/SimpleSortTests.java",
+            "line": 755,
+            "cwe": "CWE-",
+            "snippet": "// TODO: sort shouldn't fail when sort field is mapped dynamically"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/simple/SimpleSearchTests.java",
+            "line": 44,
+            "cwe": "CWE-",
+            "snippet": "client().prepareSearch((String) null).setQuery(QueryBuilders.termQuery(\"_id\", \"XXX1\")).execute().actionGet();"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/msearch/SimpleMultiSearchTests.java",
+            "line": 19,
+            "cwe": "CWE-",
+            "snippet": "client().prepareIndex(\"test\", \"type\", \"1\").setSource(\"field\", \"xxx\").execute().actionGet();"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/highlight/HighlighterSearchTests.java",
+            "line": 625,
+            "cwe": "CWE-",
+            "snippet": ".highlight(highlight().field(\"field*\").order(\"score\").preTags(\"<xxx>\").postTags(\"</xxx>\"));"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/geo/GeoShapeIntegrationTests.java",
+            "line": 150,
+            "cwe": "CWE-",
+            "snippet": "// TODO this test causes hangs, blocking on the action get when fetching the shape for some reason"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/facet/SimpleFacetsTests.java",
+            "line": 689,
+            "cwe": "CWE-",
+            "snippet": ".startArray(\"tag\").value(\"xxx\").value(\"yyy\").endArray()"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/basic/SearchWhileCreatingIndexTests.java",
+            "line": 71,
+            "cwe": "CWE-",
+            "snippet": "// TODO: add a smarter choice based on actual consistency (when that is randomized)"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/basic/TransportSearchFailuresTests.java",
+            "line": 68,
+            "cwe": "CWE-",
+            "snippet": "SearchResponse searchResponse = client().search(searchRequest(\"test\").source(\"{ xxx }\".getBytes(Charsets.UTF_8))).actionGet();"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/search/basic/TransportTwoNodesSearchTests.java",
+            "line": 350,
+            "cwe": "CWE-",
+            "snippet": "SearchResponse searchResponse = client().search(searchRequest(\"test\").source(\"{ xxx }\".getBytes(Charsets.UTF_8))).actionGet();"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/recovery/RelocationTests.java",
+            "line": 252,
+            "cwe": "CWE-",
+            "snippet": "// TODO: the first run fails with this failure, waiting for relocating nodes set to 0 is not enough?"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/nested/SimpleNestedTests.java",
+            "line": 595,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Enable when changes from BlockJoinQuery#explain are added to Lucene (Most likely version 4.2)"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/indices/warmer/LocalGatewayIndicesWarmerTests.java",
+            "line": 71,
+            "cwe": "CWE-",
+            "snippet": "\"    \\\"template\\\" : \\\"xxx\\\",\\n\" +"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/indices/settings/UpdateSettingsTests.java",
+            "line": 99,
+            "cwe": "CWE-",
+            "snippet": "Thread.sleep(300); // wait for cache time to change TODO: this needs to be solved better. To be discussed."
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/indices/leaks/IndicesLeaksTests.java",
+            "line": 69,
+            "cwe": "CWE-",
+            "snippet": "// TODO if we could iterate over the already created classes on the injector, we can just add them here to the list"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/index/search/nested/AbstractNumberNestedSortingTests.java",
+            "line": 199,
+            "cwe": "CWE-",
+            "snippet": "document.add(new StringField(\"fieldXXX\", \"x\", Field.Store.NO));"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/index/search/nested/NestedSortingTests.java",
+            "line": 205,
+            "cwe": "CWE-",
+            "snippet": "document.add(new StringField(\"fieldXXX\", \"x\", Field.Store.NO));"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/index/mapper/source/CompressSourceMappingTests.java",
+            "line": 88,
+            "cwe": "CWE-",
+            "snippet": ".field(\"field2\", \"value2 xxxxxxxxxxxxxx yyyyyyyyyyyyyyyyyyy zzzzzzzzzzzzzzzzz\")"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/index/fielddata/AbstractStringFieldDataTests.java",
+            "line": 114,
+            "cwe": "CWE-",
+            "snippet": "writer.commit(); // TODO: Have tests with more docs for sorting"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "src/main/java/org/elasticsearch/http/netty/NettyHttpChannel.java",
+            "line": 78,
+            "cwe": "CWE-942",
+            "snippet": "resp.addHeader(\"Access-Control-Allow-Origin\", transport.settings().get(\"http.cors.allow-origin\", \"*\"));"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 2898,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/ElasticSearchExceptionTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/VersionTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/versioning/SimpleVersioningTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "* http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/validate/SimpleValidateQueryTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "* http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/update/UpdateTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/ttl/SimpleTTLTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/transport/AbstractSimpleTransportTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/transport/netty/KeyedLockTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/transport/netty/SimpleNettyTransportTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/transport/local/SimpleLocalTransportTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/timestamp/SimpleTimestampTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/threadpool/UpdateThreadPoolSettingsTests.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/AbstractIntegrationTest.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/ElasticSearchLuceneTestCase.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/ElasticSearchTestCase.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/ElasticSearchThreadFilter.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/ElasticSearchTokenStreamTestCase.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/NodeSettingsSource.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*     http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/TestCluster.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/stress/search1/ParentChildStressTest.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/stress/search1/Search1StressTest.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/stress/rollingrestart/QuickRollingRestartStressTest.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/stress/rollingrestart/RollingRestartStressTest.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/stress/refresh/RefreshStressTest1.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "src/test/java/org/elasticsearch/test/stress/manyindices/ManyIndicesRemoteStressTest.java",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/main/java/org/elasticsearch/action/mlt/TransportMoreLikeThisAction.java",
+            "line": 101,
+            "cwe": "CWE-601",
+            "snippet": "redirect(request, listener, clusterState);"
+          }
+        ]
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 17,
+    "files_with_findings": 17,
+    "severity": {
+      "high": 0,
+      "medium": 17,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 17,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/test/java/org/elasticsearch/test/AbstractIntegrationTest.java",
+            "line": 136,
+            "cwe": "CWE-1336",
+            "snippet": "randomIndexTemplate();"
+          },
+          {
+            "severity": "medium",
+            "file": "src/test/java/org/elasticsearch/indices/warmer/LocalGatewayIndicesWarmerTests.java",
+            "line": 69,
+            "cwe": "CWE-1336",
+            "snippet": "client().admin().indices().preparePutTemplate(\"template_1\")"
+          },
+          {
+            "severity": "medium",
+            "file": "src/test/java/org/elasticsearch/indices/warmer/SimpleIndicesWarmerTests.java",
+            "line": 97,
+            "cwe": "CWE-1336",
+            "snippet": "client().admin().indices().preparePutTemplate(\"template_1\")"
+          },
+          {
+            "severity": "medium",
+            "file": "src/test/java/org/elasticsearch/indices/template/SimpleIndexTemplateTests.java",
+            "line": 49,
+            "cwe": "CWE-1336",
+            "snippet": "client().admin().indices().prepareDeleteTemplate(\"*\").get();"
+          },
+          {
+            "severity": "medium",
+            "file": "src/test/java/org/elasticsearch/gateway/local/SimpleRecoveryLocalGatewayTests.java",
+            "line": 295,
+            "cwe": "CWE-1336",
+            "snippet": "client.admin().indices().preparePutTemplate(\"template_1\")"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/rest/action/admin/indices/template/put/RestPutIndexTemplateAction.java",
+            "line": 81,
+            "cwe": "CWE-1336",
+            "snippet": "client.admin().indices().putTemplate(putRequest, new ActionListener<PutIndexTemplateResponse>() {"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/rest/action/admin/indices/template/delete/RestDeleteIndexTemplateAction.java",
+            "line": 55,
+            "cwe": "CWE-1336",
+            "snippet": "client.admin().indices().deleteTemplate(deleteIndexTemplateRequest, new ActionListener<DeleteIndexTemplateResponse>() {"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/index/mapper/object/DynamicTemplate.java",
+            "line": 87,
+            "cwe": "CWE-1336",
+            "snippet": "return new DynamicTemplate(name, conf, pathMatch, pathUnmatch, match, unmatch, matchMappingType, MatchType.fromString(matchPattern), mapping);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/index/mapper/object/RootObjectMapper.java",
+            "line": 204,
+            "cwe": "CWE-1336",
+            "snippet": "DynamicTemplate dynamicTemplate = findTemplate(context.path(), name, matchType);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/cluster/metadata/IndexTemplateMetaData.java",
+            "line": 85,
+            "cwe": "CWE-1336",
+            "snippet": "public String getTemplate() {"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/cluster/metadata/MetaData.java",
+            "line": 990,
+            "cwe": "CWE-1336",
+            "snippet": "public Builder removeTemplate(String templateName) {"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/cluster/metadata/MetaDataIndexTemplateService.java",
+            "line": 90,
+            "cwe": "CWE-1336",
+            "snippet": "metaData.removeTemplate(templateName);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/client/IndicesAdminClient.java",
+            "line": 611,
+            "cwe": "CWE-1336",
+            "snippet": "ActionFuture<PutIndexTemplateResponse> putTemplate(PutIndexTemplateRequest request);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/client/support/AbstractIndicesAdminClient.java",
+            "line": 488,
+            "cwe": "CWE-1336",
+            "snippet": "public ActionFuture<PutIndexTemplateResponse> putTemplate(final PutIndexTemplateRequest request) {"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/action/admin/indices/template/put/PutIndexTemplateRequestBuilder.java",
+            "line": 49,
+            "cwe": "CWE-1336",
+            "snippet": "public PutIndexTemplateRequestBuilder setTemplate(String template) {"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/action/admin/indices/template/put/TransportPutIndexTemplateAction.java",
+            "line": 82,
+            "cwe": "CWE-1336",
+            "snippet": "indexTemplateService.putTemplate(new MetaDataIndexTemplateService.PutRequest(cause, request.name())"
+          },
+          {
+            "severity": "medium",
+            "file": "src/main/java/org/elasticsearch/action/admin/indices/template/delete/DeleteIndexTemplateRequestBuilder.java",
+            "line": 61,
+            "cwe": "CWE-1336",
+            "snippet": "((IndicesAdminClient) client).deleteTemplate(request, listener);"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:0e37acb8-07fd-5257-903c-92643d879e4a",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T06:09:51Z",
+      "component": {
+        "type": "application",
+        "name": "ELASTICSEARCH",
+        "version": "b0fee6c01bf6",
+        "bom-ref": "pkg:generic/anticloud/ELASTICSEARCH@b0fee6c01bf6",
+        "purl": "pkg:generic/anticloud/ELASTICSEARCH@b0fee6c01bf6",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "b0fee6c01bf60fab9283148401e52353847932e1"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/lmenezes/elasticsearch"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 377.35
+}

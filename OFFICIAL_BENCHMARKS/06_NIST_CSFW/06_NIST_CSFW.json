@@ -1,0 +1,16 @@
+{
+ "framework": "06_NIST_CSFW",
+ "title": "NIST Cybersecurity Framework 2.0",
+ "project": "ELASTICSEARCH",
+ "basis": [
+  {
+   "check": "11_nist_csf",
+   "status": "PASS",
+   "observed": "8/8 controls evidenced (100.0%)"
+  }
+ ],
+ "verdict": "CONTROLS EVIDENCED \u2014 all basis checks PASS",
+ "pax_provenance": "Run ID loiskleinner/pax-benchmark-runner v3, 2026-10-02, Kaggle T4 x2 (2x 16GB VRAM), Ubuntu 22.04, Python 3.12. These are PAX L5 Narrow L2 General 27B model-level results \u2014 shared model component, not this project's verdict.",
+ "bench_sha3": "d52983433566960b0c3ad573f2847c27bc50bc23e7c557ca78c49d532692d7dd",
+ "register_sha3": "24dc1667778ee939bce57b323948c68053117a68cb29b10a6144055657c9c57e"
+}
